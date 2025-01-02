@@ -1,0 +1,473 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Helvetica Neue", sans-serif;
+    color: #333;
+    font-weight: 300;
+    line-height: 1.6;
+    background-color: rgba(92, 219, 208, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+aside {
+    float: right;
+}
+
+#right_aside {
+    max-width: 205px;
+    float: left;
+}
+
+.mode button {
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    background-color: rgba(92, 219, 208, 0.78);
+    width: 100px;
+    height: 50px;
+    border: 0;
+    right: 10px;
+}
+
+
+#start_button  {
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    background-color: rgba(92, 219, 208, 0.78);
+    width: 160px;
+    height: 50px;
+    border: 0;
+    margin-left: 2px;
+}
+
+#start_button:hover {
+    background-color: rgba(92, 219, 208, 0.51);
+
+}
+
+.instruments button {
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    background-color: rgba(92, 219, 208, 0.78);
+    width: 80px;
+    height: 80px;
+    border: 0;
+}
+.instruments button:hover img {
+    display: none;
+}
+.instruments button p {
+    display: none;
+}
+
+.instruments button:hover p {
+    display: block;
+}
+
+.elements {
+    margin-left: 35px;
+}
+
+.elements button {
+    background-color: #c2cad0;
+    color: #05386B;
+    width: 80px;
+    height: 80px;
+    border: 0;
+}
+
+button:hover {
+    background-color: #c2cad0;
+    color: #05386B;
+}
+
+.elements button:hover::before {
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    content: attr(text);
+}
+
+.elements button:hover img {
+    display: none;
+}
+
+.wires_dropdown button:hover img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#clean {
+    width: 100%;
+}
+
+#value button {
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    background-color: #c2cad0;
+    width: 160px;
+    height: 57px;
+    border: 0;
+}
+
+#value button:hover {
+    background-color: #c2cad0;
+    color: #05386B;
+}
+
+.container {
+    width: 75%;
+    margin: 2rem auto;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(50, 1fr);
+    grid-gap: 0;
+    max-height: 500px;
+    max-width: 730px;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+
+.gallery__img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    display: block;
+    border: 0.25px solid rgba(0, 0, 0, .25);
+}
+
+.gallery__img:hover {
+    filter: brightness(50%);
+    opacity: 0.5;
+}
+
+aside {
+    min-height: 700px;
+}
+
+/* Для выпадающего меню с готовыим цепями */
+.drop_circuits {
+    font-family: "Verdana", sans-serif;
+    font-weight: 600;
+    background-color: #dbca5c;
+    color: black;
+    letter-spacing: 2.5px;
+    width: 161px;
+    height: 50px;
+    border: 0;
+    cursor: pointer;
+    margin-left: 2px;
+}
+
+
+.drop_circuits:disabled{
+    background-color: #666666;
+}
+.drop_circuits:disabled:hover{
+    background-color: #666666;
+}
+
+
+.drop_circuits:hover, .dropbtn:focus {
+    background-color: rgba(219, 202, 92, 0.65);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.circuits_dropdown {
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Для выпадающего меню с U, R*/
+.UandR_dropdown {
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: small;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    min-width: 200px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.circuits_dropdown button {
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 300px;
+    border: 0;
+}
+
+.circuits_dropdown:disabled{
+    background-color: #666666;
+}
+
+.dropdown button:hover {
+    background-color: #ddd;
+}
+
+/*
+Кнопки масштабирование
+ */
+button[id*="scale"] {
+    background-color: rgba(219, 202, 92, 0.93);
+    width: 50px;
+}
+
+button[id*="scale"]:hover {
+    background-color: rgba(219, 202, 92, 0.65);
+}
+
+
+/* Для выпадающего меню с проводами */
+
+#myWires button {
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    color: black;
+    background-color: #f1f1f1;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    height: 90px;
+    border: 0;
+}
+
+#myWires button:hover {
+    background-color: lightpink;
+}
+
+.wires_dropdown {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 200px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.wires_dropdown button {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100px;
+    border: 0;
+}
+
+.wires_dropdown button :hover {
+    background-color: #ddd;
+}
+
+
+.show_list {
+    display: block;
+}
+
+
+/*всплывающее окно "справочник"*/
+
+
+/* Стили для подложки */
+
+.overlay {
+
+    /* Скрываем подложку  */
+    opacity: 0;
+    visibility: hidden;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 20;
+    transition: .3s all;
+}
+
+
+/* Стили для модальных окон */
+
+.modal {
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    /* Скрываем окна  */
+    opacity: 0;
+    visibility: hidden;
+
+
+    /*  Установаем ширину окна  */
+    width: 100%;
+    max-width: 1000px;
+
+
+    /*  Установаем длину окна  */
+    height: 100%;
+    max-height: 700px;
+
+    overflow-y: scroll;
+    overflow-x: scroll;
+    /*  Центрируем и задаем z-index */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 30; /* Должен быть выше чем у подложки*/
+
+    /*  Побочные стили   */
+    box-shadow: 0 3px 10px -.5px rgba(0, 0, 0, .2);
+    text-align: center;
+    padding: 30px;
+    background-color: #fff;
+    transition: 0.3s all;
+
+}
+
+
+/* Стили для активных классов подложки и окна */
+
+.modal.active,
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Стили для кнопки закрытия */
+
+.modal__cross {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    fill: #444;
+    cursor: pointer;
+}
+
+/* Стили для кнопок. Мы ведь порядочные разработчики, негоже простые ссылки оставлять */
+
+table #js-open-modal {
+    font-family: "Verdana", sans-serif;
+    font-weight: 600;
+    background-color: rgb(219, 202, 92);
+    color: black;
+    width: 205px;
+    height: 50px;
+    border: 0;
+    cursor: pointer;
+
+}
+
+/* Кнопки внутри модального окна */
+.directory {
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    background-color: #e73701;
+    width: 100px;
+    height: 50px;
+    border: 0;
+}
+
+.directory button:hover {
+    background-color: #cf9989;
+}
+
+
+.elements_description {
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    background-color: aliceblue;
+    color: #05386B;
+    width: 125px;
+    height: 50px;
+    border: 0;
+}
+
+.elements_description button:hover {
+    background-color: lightpink;
+}
+
+#js-open-modal:hover {
+    background-color: rgba(219, 202, 92, 0.65);
+}
+
+
+.text_elements_description {
+    font-size: medium;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+}
+
+#only_description{
+    font-size: medium;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+}
+
+h3{
+    font-size: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#calcResults{
+    max-width: 164px;
+    font-size: 13px;
+    border-collapse: collapse;
+    background-color: darkseagreen;
+    border-radius: 5px;
+}
+
+#calcResults tr{
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+#calcResults tr:nth-child(even) {
+    background: aliceblue;
+    font-weight: bold;
+}
+
+#message{
+    font-size: 15px;
+}
+/*Для меню с элементами*/
